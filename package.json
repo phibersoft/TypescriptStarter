@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node -r ts-node/register ./server.ts",
-    "start:watch": "nodemon",
+    "watch": "nodemon",
     "start": "node ./dist/bundle.js",
     "build:ts": "tsc",
     "build:webpack": "webpack",
