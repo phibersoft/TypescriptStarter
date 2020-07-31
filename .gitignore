@@ -1,3 +1,7 @@
 node_modules/
-dist/
 .vscode/
+routes/
+middlewares/
+models/
+controllers/
+helpers/
