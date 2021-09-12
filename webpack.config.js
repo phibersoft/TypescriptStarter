@@ -1,5 +1,4 @@
-const path = require('path');
-const DotEnv = require('dotenv-webpack');
+const path = require('path'), DotEnv = require('dotenv-webpack'), nodeExternals = require('webpack-node-externals');
 
 module.exports = {
     mode: 'production',
@@ -24,5 +23,8 @@ module.exports = {
     },
     plugins: [
         new DotEnv()
+    ],
+    externals: [
+        nodeExternals()
     ]
 }

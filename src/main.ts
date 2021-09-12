@@ -2,6 +2,7 @@ import * as express from "express";
 import CERROR from "./classes/CERROR";
 import errorHandler from "./middlewares/errorHandler";
 import securityHandler  from "./middlewares/securityHandler";
+import * as morgan from "morgan";
 
 require("dotenv").config();
 
@@ -9,7 +10,9 @@ const PORT = process.env.PORT || 9090;
 const app = express();
 const wrapper = require("express-async-wrapper");
 
-app.use(securityHandler);
+
+securityHandler(app);
+app.use(morgan(':method :url (:status) :response-time ms'));
 
 app.all(
   "/",

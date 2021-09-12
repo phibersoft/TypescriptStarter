@@ -1,21 +1,16 @@
 import * as cors from "cors";
 import * as helmet from "helmet";
-import { NextFunction, Request, Response } from "express";
+import {Express, NextFunction, Request, Response} from "express";
 
 export const corsConfig: cors.CorsOptions = {
   allowedHeaders: "*",
   methods: "*",
 };
 
-const securityHandler = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
-  await cors(corsConfig);
-  await helmet();
 
-  next();
-};
+const securityHandler = (app: Express) => {
+  app.use(cors(corsConfig));
+  app.use(helmet());
+}
 
 export default securityHandler;
