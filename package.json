@@ -10,7 +10,8 @@
     "watch": "nodemon",
     "build": "webpack",
     "start": "node dist/bundle.js",
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "work": "node -r ts-node/register src/work.ts"
   },
   "dependencies": {
     "chalk": "^4.1.2",
