@@ -22,7 +22,7 @@
     "express-async-wrapper": "^0.1.0",
     "helmet": "^4.6.0",
     "morgan": "^1.10.0",
-    "nodemon": "^1.19.4",
+    "nodemon": "^2.0.15",
     "ts-node": "^10.2.1"
   },
   "devDependencies": {
