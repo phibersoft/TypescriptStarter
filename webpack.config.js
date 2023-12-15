@@ -2,7 +2,7 @@ const path = require("path"),
   nodeExternals = require("webpack-node-externals");
 const WebpackShell = require("webpack-shell-plugin-next");
 
-const { NODE_ENV = "production" } = process.env;
+const { NODE_ENV = "development" } = process.env;
 
 module.exports = {
   entry: "./src/server.ts",
