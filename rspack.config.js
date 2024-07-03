@@ -1,10 +1,20 @@
 const path = require("path"),
-  nodeExternals = require("webpack-node-externals");
-const WebpackShell = require("webpack-shell-plugin-next");
+  nodeExternals = require("webpack-node-externals"),
+  WebpackShell = require("webpack-shell-plugin-next");
 
 const { NODE_ENV = "development" } = process.env;
 
-module.exports = {
+const config = {
+  module: {
+    rules: [
+      {
+        test: /\.(j|t)s$/,
+        exclude: [/[\\/]node_modules[\\/]/],
+        loader: "builtin:swc-loader",
+        options: {},
+      },
+    ],
+  },
   entry: "./src/server.ts",
   mode: NODE_ENV,
   target: "node",
@@ -30,12 +40,6 @@ module.exports = {
           }),
         ]),
   ],
-  module: {
-    rules: [
-      {
-        test: /\.ts$/,
-        use: ["ts-loader"],
-      },
-    ],
-  },
 };
+
+module.exports = config;
